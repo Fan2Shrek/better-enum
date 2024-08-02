@@ -32,6 +32,10 @@ class ValueCalculator {
         $ones = [];
         $max = \PHP_INT_MAX;
 
+        if ($value >= 1 << $bitLenght) {
+            throw new \InvalidArgumentException('Value is out of range');
+        }
+
         while (1 && $max !== 0 && 0 < $bitLenght) {
             --$bitLenght;
             $max = 1 << $bitLenght;
