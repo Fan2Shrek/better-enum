@@ -6,7 +6,7 @@ use Fan2Shrek\BetterEnum\File\File;
 
 class NullCache extends AbstractCache
 {
-    public function doLoad(File $file): bool
+    public function doLoad(mixed $file): bool
     {
         try {
             eval('?>' . $file->getContent());

@@ -29,6 +29,9 @@ class DynamicEnumGenerator implements DynamicEnumGeneratorInterface {
         } 
 
         foreach ($enumMetadata->getCases() as $value) {
+            if ('' !== $content) {
+                $content .= "\n";
+            }
             $content .= $this->doCase($value);
         }
 
@@ -37,7 +40,7 @@ class DynamicEnumGenerator implements DynamicEnumGeneratorInterface {
 
     private function doCase(CaseMetadata $caseMetada): string
     {
-        return sprintf("    case %s = %s;\n", strtoupper($caseMetada->getName()), $caseMetada->getValue());
+        return sprintf("    case %s = %s;", strtoupper($caseMetada->getName()), $caseMetada->getValue());
     }
 
     private function formatInterfaces(array $interfaces): string
