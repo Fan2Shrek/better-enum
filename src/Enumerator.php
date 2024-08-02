@@ -42,8 +42,8 @@ class Enumerator {
             $metadata->getName(),
             'int',
             $metadata->getNamespace(),
-            interfaces: [MultipleValueInterface::class],
-            traits: [CalculatableTrait::class],
+            interfaces: [MultipleValueInterface::class, ...$metadata->getInterfaces()],
+            traits: [CalculatableTrait::class, ...$metadata->getTraits()],
         );
 
         $i = 0;
