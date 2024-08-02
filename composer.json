@@ -1,0 +1,17 @@
+{
+    "name": "fan2shrek/better-enum",
+    "autoload": {
+        "psr-4": {
+            "Fan2Shrek\\BetterEnum\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pierre Ambroise",
+            "email": "pierre27.ambroise@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^7.1"
+    }
+}
