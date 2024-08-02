@@ -1,8 +1,10 @@
 <?php
 
+use Fan2Shrek\BetterEnum\Cache\FileCache;
+
 require_once __DIR__ . '/vendor/autoload.php';
 
-$enumerator = new Fan2Shrek\BetterEnum\Enumerator();
+$enumerator = new Fan2Shrek\BetterEnum\Enumerator(new FileCache(__DIR__ . '/var/cache'));
 
 $metadata = new Fan2Shrek\BetterEnum\DynamicEnum\DynamicEnumMetadata('TestEnum', 'int', 'App');
 

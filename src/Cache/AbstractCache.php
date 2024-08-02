@@ -48,7 +48,7 @@ abstract class AbstractCache implements CacheInterface
         }
     }
 
-    abstract protected function doLoad(File $value): bool;
+    abstract protected function doLoad(mixed $value): bool;
 
     abstract protected function doRemove(File $value): void;
 

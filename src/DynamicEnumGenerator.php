@@ -16,8 +16,8 @@ class DynamicEnumGenerator implements DynamicEnumGeneratorInterface {
             '{{ Namespace }}' => '' === $enumMetadata->getNamespace() ? '' : \sprintf("\nnamespace %s;\n", $enumMetadata->getNamespace()),
             '{{ Interfaces }}' => [] === $enumMetadata->getInterfaces() ? '' : \sprintf(' implements %s', $this->formatInterfaces($enumMetadata->getInterfaces())),
         ]);
-        
-        return new File('', $content);
+
+        return new File($enumMetadata->getName() . '.php', $content);
     }
 
     private function getContent(DynamicEnumMetadata $enumMetadata): string
